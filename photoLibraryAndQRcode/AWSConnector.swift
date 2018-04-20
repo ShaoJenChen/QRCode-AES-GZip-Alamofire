@@ -85,15 +85,19 @@ class AWSConnector: NSObject {
         
         let deviceInfo = UIDevice.current.name
         
-        let deviceType = UIDevice.current.modelName
+        let deviceType = "iOS" + UIDevice.current.systemVersion + "-" + UIDevice.current.modelName
+        
+        let appName = Bundle.main.infoDictionary?[kCFBundleNameKey as String] as! String
         
         let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
+        
+        let appNameAndVersion = appName + appVersion
         
         let parameters = [
             "file_data"    : ciphertext,
             "device_info"  : deviceInfo,
             "device_type"  : deviceType,
-            "app_version"  : appVersion
+            "app_version"  : appNameAndVersion
             ]
 
         self.sessionManager.request("https://6e6jakb3e1.execute-api.us-east-1.amazonaws.com/dev/setfile/", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).responseJSON { (response: DataResponse<Any>) in

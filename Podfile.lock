@@ -1,16 +1,19 @@
 PODS:
   - Alamofire (4.3.0)
   - CryptoSwift (0.9.0)
+  - GzipSwift (4.0.4)
   - ObjectMapper (3.1.0)
 
 DEPENDENCIES:
   - Alamofire
   - CryptoSwift (from `https://github.com/krzyzanowskim/CryptoSwift`, branch `master`)
+  - GzipSwift
   - ObjectMapper
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Alamofire
+    - GzipSwift
     - ObjectMapper
 
 EXTERNAL SOURCES:
@@ -26,8 +29,9 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   Alamofire: 856a113053a7bc9cbe5d6367a555d773fc5cfef7
   CryptoSwift: 86ce710daa9efdaba46b440e02de42fd2b343b88
+  GzipSwift: 1a5bc5f7827e09846b0635b5079f1224bc3b1c3a
   ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
 
-PODFILE CHECKSUM: cf76e665f234c7f56b8992d06ea9eb78022d33df
+PODFILE CHECKSUM: 8a4477042edde275422087db46c5d0fb6913c143
 
 COCOAPODS: 1.5.0

@@ -6,6 +6,7 @@ use_frameworks!
 def common_pods
     pod 'Alamofire'
     pod 'ObjectMapper'
+    pod 'GzipSwift'
     pod 'CryptoSwift', :git => 'https://github.com/krzyzanowskim/CryptoSwift', :branch => 'master'
 end
 

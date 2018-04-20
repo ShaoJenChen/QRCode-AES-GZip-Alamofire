@@ -7,6 +7,7 @@
 //
 
 import CryptoSwift
+import Gzip
 
 private let _manager = AESManager()
 
@@ -30,9 +31,12 @@ class AESManager: NSObject {
             let aecEnc: AES = try AES(key: Array(key.utf8), blockMode: .ECB)
             let enc = try aecEnc.encrypt(data.bytes)
             
-            // 使用Base64編碼方式將Data轉回字串
+            // Gzip壓縮
             let encData: Data = Data(bytes: enc, count: enc.count)
-            result = encData.base64EncodedString()
+            let compressedData: Data = try! encData.gzipped()
+            
+            // 使用Base64編碼方式將Data轉回字串
+            result = compressedData.base64EncodedString()
         } catch {
             print("\(error.localizedDescription)")
         }
@@ -47,9 +51,18 @@ class AESManager: NSObject {
             // 使用Base64的解碼方式將字串解碼後再轉换Data
             let data = Data(base64Encoded: ciphertext, options: .ignoreUnknownCharacters)!
             
+            let decompressedData: Data
+            
+            // Gunzip解壓縮
+            if data.isGzipped {
+                decompressedData = try! data.gunzipped()
+            } else {
+                decompressedData = data
+            }
+            
             // 用AES方式將Data解密
             let aesDec: AES = try AES(key: Array(key.utf8), blockMode: .ECB)
-            let dec = try aesDec.decrypt(data.bytes)
+            let dec = try aesDec.decrypt(decompressedData.bytes)
             
             // 用UTF8的編碼方式將解完密的Data轉回字串
             let desData: Data = Data(bytes: dec, count: dec.count)
