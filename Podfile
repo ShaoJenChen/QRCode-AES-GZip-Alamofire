@@ -8,6 +8,7 @@ def common_pods
     pod 'ObjectMapper'
     pod 'GzipSwift'
     pod 'CryptoSwift', :git => 'https://github.com/krzyzanowskim/CryptoSwift', :branch => 'master'
+    pod 'MBProgressHUD'
 end
 
 target 'photoLibraryAndQRcode' do

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import CoreData
+import MBProgressHUD
 
 class ViewController: UIViewController, UINavigationControllerDelegate{
 
@@ -25,6 +27,52 @@ class ViewController: UIViewController, UINavigationControllerDelegate{
         guard let checksum = UserDefaults.standard.object(forKey: key) as? String else { return }
         
         self.checkSumLabel.text = checksum
+        
+        ///
+        ///coredata
+        let delegate = UIApplication.shared.delegate as! AppDelegate
+        let context = delegate.persistentContainer.viewContext
+        
+        let engineer = NSEntityDescription.entity(forEntityName: "Engineer", in: context)
+        
+//        engineer.
+        
+        //insert
+//        let man: Engineer = NSEntityDescription.insertNewObject(forEntityName: "Engineer", into: context) as! Engineer
+//
+//        man.attribute = "shaojen"
+//        man.attribute1 = "李白"
+//        man.attribute2 = true
+        
+//        do {
+//            try context.save()
+//        } catch {
+//            fatalError("\(error)")
+//        }
+        
+        // update
+//        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Engineer")
+//        request.predicate = nil
+//        let name = "李白"
+//        request.predicate =
+//            NSPredicate(format: "attribute1 = '\(name)'")
+//
+//        do {
+//            let results =
+//                try context.fetch(request)
+//                    as! [Engineer]
+//
+//            if results.count > 0 {
+//                results[0].attribute2 = false
+//                try context.save()
+//            }
+//        } catch {
+//            fatalError("\(error)")
+//        }
+        
+        
+//        let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
+        
         
     }
 
@@ -45,6 +93,42 @@ class ViewController: UIViewController, UINavigationControllerDelegate{
             self.present(imagePicker, animated: true, completion: nil)
         }
     }
+    
+    @IBAction func saveQRcode(_ sender: UIButton) {
+        
+//        let image = UIImage.init(view: self.view)
+        
+//        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+        
+//        CustomPhotoAlbum.sharedInstance.saveImage(image: self.jsonStringQRCode.image!)
+        
+        UIImageWriteToSavedPhotosAlbum(self.jsonStringQRCode.image!, nil, nil, nil)
+        
+    }
+    
+    @objc func image(_ image: UIImage, didFinishSavingWithError error: NSError?, contextInfo: UnsafeRawPointer) {
+        
+        let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
+        
+        if let error = error {
+            
+            alert.title = "儲存失敗"
+            
+            alert.message = error.localizedDescription
+            
+        } else {
+            
+            alert.title = "已儲存"
+            
+            alert.message = "QR Code 已儲存到照片"
+            
+        }
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        
+        present(alert, animated: true)
+    }
+    
     
     @IBAction func generateQRcode(_ sender: UIButton) {
         
@@ -106,8 +190,11 @@ class ViewController: UIViewController, UINavigationControllerDelegate{
             filter.setValue(data, forKey: "inputMessage")
             let transform = CGAffineTransform(scaleX: 3, y: 3)
             
+            let context = CIContext()
+            
             if let output = filter.outputImage?.transformed(by: transform) {
-                self.jsonStringQRCode.image = UIImage(ciImage: output)
+                let cgimage = context.createCGImage(output, from: output.extent)
+                self.jsonStringQRCode.image = UIImage(cgImage: cgimage!)
             }
         }
         
@@ -285,4 +372,16 @@ extension ViewController: QRCodeDelegate {
         
     }
     
+}
+
+extension UIImage{
+    convenience init(view: UIView) {
+        
+        UIGraphicsBeginImageContextWithOptions(view.bounds.size, view.isOpaque, 0.0)
+        view.drawHierarchy(in: view.bounds, afterScreenUpdates: false)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        self.init(cgImage: (image?.cgImage)!)
+        
+    }
 }

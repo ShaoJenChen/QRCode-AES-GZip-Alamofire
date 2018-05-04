@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8D1155732090853B00975C75 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8D1155712090853B00975C75 /* Model.xcdatamodeld */; };
+		8D11557E209088A400975C75 /* Engineer+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D11557C209088A400975C75 /* Engineer+CoreDataClass.swift */; };
+		8D11557F209088A400975C75 /* Engineer+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D11557D209088A400975C75 /* Engineer+CoreDataProperties.swift */; };
+		8D7C3D9A20996B330067812A /* CustomPhotoAlbum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7C3D9920996B330067812A /* CustomPhotoAlbum.swift */; };
 		8DC1CF3320872601005E6C5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC1CF3220872601005E6C5B /* AppDelegate.swift */; };
 		8DC1CF3520872601005E6C5B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC1CF3420872601005E6C5B /* ViewController.swift */; };
 		8DC1CF3820872601005E6C5B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DC1CF3620872601005E6C5B /* Main.storyboard */; };
@@ -22,6 +26,10 @@
 /* Begin PBXFileReference section */
 		1EA8BB2E8B9351BC8B2B7697 /* Pods-photoLibraryAndQRcode.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-photoLibraryAndQRcode.release.xcconfig"; path = "Pods/Target Support Files/Pods-photoLibraryAndQRcode/Pods-photoLibraryAndQRcode.release.xcconfig"; sourceTree = "<group>"; };
 		8909E39DC47B1914372963BA /* Pods_photoLibraryAndQRcode.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_photoLibraryAndQRcode.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D1155722090853B00975C75 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		8D11557C209088A400975C75 /* Engineer+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Engineer+CoreDataClass.swift"; sourceTree = "<group>"; };
+		8D11557D209088A400975C75 /* Engineer+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Engineer+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		8D7C3D9920996B330067812A /* CustomPhotoAlbum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPhotoAlbum.swift; sourceTree = "<group>"; };
 		8DC1CF2F20872601005E6C5B /* photoLibraryAndQRcode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = photoLibraryAndQRcode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DC1CF3220872601005E6C5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8DC1CF3420872601005E6C5B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +67,8 @@
 		8DC1CF2620872600005E6C5B = {
 			isa = PBXGroup;
 			children = (
+				8D11557C209088A400975C75 /* Engineer+CoreDataClass.swift */,
+				8D11557D209088A400975C75 /* Engineer+CoreDataProperties.swift */,
 				8DC1CF3120872601005E6C5B /* photoLibraryAndQRcode */,
 				8DC1CF3020872601005E6C5B /* Products */,
 				C9DEC2DBE2013C903D4051D7 /* Pods */,
@@ -87,6 +97,8 @@
 				8DC1CF3920872603005E6C5B /* Assets.xcassets */,
 				8DC1CF3B20872603005E6C5B /* LaunchScreen.storyboard */,
 				8DC1CF3E20872603005E6C5B /* Info.plist */,
+				8D1155712090853B00975C75 /* Model.xcdatamodeld */,
+				8D7C3D9920996B330067812A /* CustomPhotoAlbum.swift */,
 			);
 			path = photoLibraryAndQRcode;
 			sourceTree = "<group>";
@@ -179,6 +191,7 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/GzipSwift/Gzip.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -186,6 +199,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Gzip.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -218,9 +232,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D11557E209088A400975C75 /* Engineer+CoreDataClass.swift in Sources */,
 				8DC1CF3520872601005E6C5B /* ViewController.swift in Sources */,
 				8DC1CF3320872601005E6C5B /* AppDelegate.swift in Sources */,
+				8D7C3D9A20996B330067812A /* CustomPhotoAlbum.swift in Sources */,
 				8DC1CF6520884AD4005E6C5B /* QRCodeScannerViewController.swift in Sources */,
+				8D1155732090853B00975C75 /* Model.xcdatamodeld in Sources */,
+				8D11557F209088A400975C75 /* Engineer+CoreDataProperties.swift in Sources */,
 				8DC1CF9520888056005E6C5B /* AWSGetFileResponse.swift in Sources */,
 				8DC1CF9320887D76005E6C5B /* AWSConnector.swift in Sources */,
 				8DC1CF97208885AF005E6C5B /* AESManager.swift in Sources */,
@@ -300,7 +318,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -354,7 +372,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -371,7 +389,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 79E68ZK73C;
 				INFOPLIST_FILE = photoLibraryAndQRcode/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = tw.com.geovision.photoLibraryAndQRcode;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -387,7 +409,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 79E68ZK73C;
 				INFOPLIST_FILE = photoLibraryAndQRcode/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = tw.com.geovision.photoLibraryAndQRcode;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -417,6 +443,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		8D1155712090853B00975C75 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8D1155722090853B00975C75 /* Model.xcdatamodel */,
+			);
+			currentVersion = 8D1155722090853B00975C75 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 8DC1CF2720872600005E6C5B /* Project object */;
 }

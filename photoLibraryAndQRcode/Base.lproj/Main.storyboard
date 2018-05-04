@@ -84,6 +84,13 @@
                                     <constraint firstAttribute="height" constant="120" id="9Hr-ST-BKs"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gkF-jK-TqB">
+                                <rect key="frame" x="15" y="497" width="158" height="30"/>
+                                <state key="normal" title="Save QRcode to Album"/>
+                                <connections>
+                                    <action selector="saveQRcode:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Dhe-TC-6TC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -92,6 +99,7 @@
                             <constraint firstItem="QbR-d1-c3O" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="2pH-Qp-FNT"/>
                             <constraint firstItem="Ieu-Je-gnY" firstAttribute="centerY" secondItem="scS-eR-mFG" secondAttribute="centerY" id="36K-fd-WJC"/>
                             <constraint firstItem="QbR-d1-c3O" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="DDg-QK-6Xj"/>
+                            <constraint firstItem="gkF-jK-TqB" firstAttribute="top" secondItem="5o1-5v-UVD" secondAttribute="bottom" constant="25" id="GGk-x1-fiD"/>
                             <constraint firstItem="HSd-KL-s3M" firstAttribute="top" secondItem="QbR-d1-c3O" secondAttribute="bottom" constant="12" id="IWx-Re-imv"/>
                             <constraint firstItem="HSd-KL-s3M" firstAttribute="leading" secondItem="QbR-d1-c3O" secondAttribute="leading" id="IqE-Mr-WeO"/>
                             <constraint firstItem="scS-eR-mFG" firstAttribute="leading" secondItem="QbR-d1-c3O" secondAttribute="leading" id="IyO-93-rRx"/>
@@ -105,6 +113,7 @@
                             <constraint firstItem="Zsb-r8-gmh" firstAttribute="centerY" secondItem="HSd-KL-s3M" secondAttribute="centerY" id="aYj-wN-DpA"/>
                             <constraint firstItem="xRR-We-AeG" firstAttribute="leading" secondItem="5o1-5v-UVD" secondAttribute="trailing" constant="36" id="ha3-qd-6os"/>
                             <constraint firstItem="Zsb-r8-gmh" firstAttribute="leading" secondItem="HSd-KL-s3M" secondAttribute="trailing" constant="59" id="jCR-hH-Uaz"/>
+                            <constraint firstItem="gkF-jK-TqB" firstAttribute="leading" secondItem="5o1-5v-UVD" secondAttribute="leading" id="kCb-1x-fhP"/>
                             <constraint firstItem="wqz-TV-gmE" firstAttribute="leading" secondItem="5Dm-jK-6Jc" secondAttribute="leading" id="qYg-sQ-oSQ"/>
                             <constraint firstItem="xRR-We-AeG" firstAttribute="top" secondItem="5Dm-jK-6Jc" secondAttribute="top" id="qmy-xu-6ZQ"/>
                             <constraint firstItem="5Dm-jK-6Jc" firstAttribute="leading" secondItem="7uj-se-puE" secondAttribute="leading" id="uBh-PE-Hay"/>
